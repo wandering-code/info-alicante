@@ -68,7 +68,7 @@ main { flex: 1; padding-bottom: 32px; outline: none; }
   border-bottom: 1px solid var(--line);
   padding-top: env(safe-area-inset-top);
 }
-.header-inner { display: flex; align-items: center; gap: 16px; min-height: 58px; }
+.header-inner { display: flex; align-items: center; gap: 10px; min-height: 58px; }
 .brand { display: flex; align-items: center; gap: 10px; flex: none; white-space: nowrap; text-decoration: none; color: var(--text); }
 .brand-mark svg { width: 30px; height: 30px; display: block; }
 .brand-mark circle { fill: var(--sun); }
@@ -77,7 +77,7 @@ main { flex: 1; padding-bottom: 32px; outline: none; }
 .brand-text strong { color: var(--sea); font-weight: 700; }
 .main-nav { display: flex; gap: 4px; margin-left: auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .main-nav a {
-  padding: 6px 12px; border-radius: 999px; text-decoration: none;
+  padding: 6px 10px; border-radius: 999px; text-decoration: none;
   color: var(--muted); font-size: .9rem; font-weight: 500; white-space: nowrap;
 }
 .main-nav a[aria-current="page"] { background: var(--surface-2); color: var(--text); }
@@ -176,3 +176,40 @@ main { flex: 1; padding-bottom: 32px; outline: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- parkings ---------- */
+:root { --red: #c2410c; --red-soft: #fde7dc; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --red: #fb8a5c; --red-soft: #3d2216; } }
+:root[data-theme="dark"] { --red: #fb8a5c; --red-soft: #3d2216; }
+
+.park-summary { flex: 1; min-height: 46px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 6px; padding: 10px 14px; background: var(--surface-2); border-radius: 14px; color: var(--muted); font-size: .92rem; }
+.park-summary strong { color: var(--text); font-family: var(--font-display); font-size: 1.35rem; line-height: 1; }
+
+.park { --tone: var(--green); --tone-soft: var(--green-soft); }
+.park--amber { --tone: var(--amber); --tone-soft: var(--amber-soft); }
+.park--red, .park--full { --tone: var(--red); --tone-soft: var(--red-soft); }
+.park::before { background: var(--tone); }
+.park-top { display: flex; gap: 14px; justify-content: space-between; align-items: flex-start; }
+.park-heading { min-width: 0; }
+.park-level { margin: 0; display: inline-flex; align-items: center; gap: 6px; font-size: .8rem; font-weight: 600; color: var(--tone); text-transform: uppercase; letter-spacing: .04em; }
+.park--full .dot, .park--red .dot { animation: none; }
+.park-addr { margin: 4px 0 0; color: var(--muted); font-size: .9rem; }
+.park-free { flex: none; text-align: center; background: var(--tone-soft); color: var(--tone); border-radius: 14px; padding: 8px 12px; min-width: 84px; }
+.park-free strong { display: block; font-family: var(--font-display); font-size: 1.9rem; line-height: 1; }
+.park-free span { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+.bar { margin-top: 16px; height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.bar span { display: block; height: 100%; border-radius: inherit; background: var(--tone); transition: width .4s ease; }
+.park-foot { margin-top: 10px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; font-size: .88rem; }
+.muted { color: var(--muted); }
+.link-btn { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; color: var(--sea); }
+.link-btn .icon svg { width: 16px; height: 16px; }
+
+.others { margin-top: 28px; }
+.others h2 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; }
+.others > p { margin: 4px 0 12px; font-size: .9rem; }
+.other-list { list-style: none; margin: 0; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.other-list li + li { border-top: 1px solid var(--line); }
+.other-list a { display: flex; justify-content: space-between; gap: 12px; padding: 12px 16px; text-decoration: none; color: var(--text); }
+.other-list a:hover { background: var(--surface-2); }
+.other-name { font-weight: 500; }
+.other-list .muted { font-size: .88rem; text-align: right; }

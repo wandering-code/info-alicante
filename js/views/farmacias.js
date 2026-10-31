@@ -131,7 +131,7 @@ function formatQueriedAt(q) {
 
 export default {
   id: 'farmacias',
-  title: 'Farmacias de guardia',
+  title: 'Farmacias',
 
   render(container) {
     let locality = readStorage(STORAGE_KEY);

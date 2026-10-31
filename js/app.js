@@ -1,8 +1,9 @@
 // Router mínimo por hash. Para añadir una vista nueva: crear js/views/<vista>.js
 // que exporte { id, title, render(container) } y añadirla a VIEWS.
 import farmacias from './views/farmacias.js';
+import parkings from './views/parkings.js';
 
-const VIEWS = [farmacias];
+const VIEWS = [farmacias, parkings];
 const DEFAULT_VIEW = VIEWS[0].id;
 
 const nav = document.getElementById('main-nav');

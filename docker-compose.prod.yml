@@ -1,0 +1,7 @@
+# Se carga EXPLÍCITO en el mini PC:
+#   docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d
+services:
+  backend:
+    ports:
+      # Puerto backend 8006 de la tabla de dev-standards (nginx público: 3013)
+      - "127.0.0.1:8006:8000"
