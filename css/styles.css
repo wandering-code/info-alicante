@@ -68,14 +68,14 @@ main { flex: 1; padding-bottom: 32px; outline: none; }
   border-bottom: 1px solid var(--line);
   padding-top: env(safe-area-inset-top);
 }
-.header-inner { display: flex; align-items: center; gap: 16px; min-height: 58px; flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.header-inner { display: flex; align-items: center; gap: 16px; min-height: 58px; }
+.brand { display: flex; align-items: center; gap: 10px; flex: none; white-space: nowrap; text-decoration: none; color: var(--text); }
 .brand-mark svg { width: 30px; height: 30px; display: block; }
 .brand-mark circle { fill: var(--sun); }
 .brand-mark path { fill: none; stroke: var(--sea); stroke-width: 3; stroke-linecap: round; }
 .brand-text { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; }
 .brand-text strong { color: var(--sea); font-weight: 700; }
-.main-nav { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; }
+.main-nav { display: flex; gap: 4px; margin-left: auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .main-nav a {
   padding: 6px 12px; border-radius: 999px; text-decoration: none;
   color: var(--muted); font-size: .9rem; font-weight: 500; white-space: nowrap;
